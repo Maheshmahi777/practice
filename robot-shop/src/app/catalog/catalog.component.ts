@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IProducts } from './products';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.css'],
 })
-export class CatalogComponent {
+export class CatalogComponent implements OnInit {
   filter: string = '';
   products: IProducts[];
 
-  constructor() {
+  constructor(private cartService: CartService) {
     this.products = [
       {
         id: 1,
@@ -188,6 +189,14 @@ export class CatalogComponent {
     ];
   }
 
+  ngOnInit(): void {
+    localStorage.setItem('name', 'Dhoni');
+    let userName = localStorage.getItem('name');
+    console.log('Name from localStorage is :', userName);
+    localStorage.removeItem('name');
+    localStorage.clear();
+  }
+
   getImageUrl(product: IProducts) {
     return '/assets/images/robot-parts/' + product.imageName;
   }
@@ -196,5 +205,9 @@ export class CatalogComponent {
     return this.filter === ''
       ? this.products
       : this.products.filter((product) => product.category === this.filter);
+  }
+
+  addToCart(product: IProducts) {
+    this.cartService.add(product);
   }
 }
