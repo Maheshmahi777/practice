@@ -64,7 +64,7 @@ export class CodingExamplesComponent implements OnInit {
     }
     palindromeString('radar');
 
-    // Another way or cleaner way
+    // Another way or cleaner way that ignores spaces and special characters
 
     function isPalindrome(str: string): boolean {
       // Remove non-alphanumeric characters and convert to lowercase
