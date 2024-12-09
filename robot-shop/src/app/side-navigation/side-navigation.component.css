@@ -1,0 +1,9 @@
+.side-nav {
+    width: 25%;
+    height: calc(100vh - 200px);
+    background-color: #eaa96f;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
