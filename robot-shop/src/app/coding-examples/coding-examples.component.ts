@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CodingExamplesComponent implements OnInit {
   ngOnInit(): void {
-    // Duplicate or Repetitive Characters in a string in Array
+    // 1)  Duplicate or Repetitive Characters in a string in Array
     // Expected output
     // Duplicate characters: [ 'r', 'g', 'm' ]
 
@@ -51,7 +51,7 @@ export class CodingExamplesComponent implements OnInit {
     // }
     // Expected output : Duplicate characters: { r: 2, g: 2, m: 2 }
 
-    // palindrome string example
+    // 2)  palindrome string example
 
     function palindromeString(palindromeString: string) {
       let reversedString = palindromeString.split('').reverse().join('');
@@ -79,5 +79,52 @@ export class CodingExamplesComponent implements OnInit {
 
     let result = isPalindrome('A man, a plan, a canal, Panama');
     console.log(result);
+
+    // 3) Program to Title Case given String
+
+    function toTitleCase(input: string) {
+      // Split the string into words
+      return str
+        .split(' ') // Split by spaces into an array of words
+        .map(
+          (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() // Capitalize first letter, lower case the rest
+        )
+        .join(' '); // Join the array of words back into a string
+    }
+
+    // Example usage:
+    let input = 'hello world from javascript';
+    let titleCased = toTitleCase(input);
+    console.log(titleCased); // Output: "Hello World From Javascript"
+
+    // Program to Title Case given String
+
+    // 4) Longest word from a given string
+    let string = 'ab abc abcd abcde programming abcdef abcdefgh';
+    let words;
+    let longest = '';
+
+    words = string.split(' ');
+    for (let word of words) {
+      if (word.length > longest.length) {
+        longest = word;
+      }
+    }
+    console.log('Longest word is:', longest);
+
+    // Longest word from a given string
+
+    // Second longest word from a given string modify for loop as below
+    // Add another variable
+    let secondLongest = '';
+    for (let word of words) {
+      if (word.length > longest.length) {
+        secondLongest = longest;
+        longest = word;
+      } else if (word.length > secondLongest.length && word !== longest) {
+        secondLongest = word;
+      }
+      console.log('Second longest word is:', secondLongest);
+    }
   }
 }
