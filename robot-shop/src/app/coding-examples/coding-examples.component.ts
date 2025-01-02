@@ -181,5 +181,22 @@ export class CodingExamplesComponent implements OnInit {
 
     // Count of characters from a string with Index of each alphabet from (1 to 26, a-z)
     // Count of repeating characters from astring with Index of each alphabet from (1 to 26, a-z)
+
+    // Count of numbers along with their Index from (0-9)
+
+    let number = '9987632150';
+    let numberCount: any = {};
+    let numberIndex: any = {};
+
+    for (let num of number) {
+      numberCount[num] = (numberCount[num] || 0) + 1;
+      if (num >= '0' && num <= '9') {
+        numberIndex[num] = num;
+      }
+    }
+    console.log('Count of numbers from given number', numberCount);
+    console.log('Index of numbers from given number string', numberIndex);
+
+    // Count of numbers along with their Index from (0-9)
   }
 }
