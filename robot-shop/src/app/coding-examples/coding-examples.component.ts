@@ -114,7 +114,7 @@ export class CodingExamplesComponent implements OnInit {
 
     // Longest word from a given string
 
-    // Second longest word from a given string modify for loop as below
+    // 5) Second longest word from a given string modify for loop as below
     // Add another variable
     let secondLongest = '';
     for (let word of words) {
@@ -127,6 +127,7 @@ export class CodingExamplesComponent implements OnInit {
       console.log('Second longest word is:', secondLongest);
     }
 
+    // Sample Promise creation and consumption
     const myPromise = new Promise((resolve, reject) => {
       let a = 1;
       if (a !== 1) {
@@ -149,9 +150,10 @@ export class CodingExamplesComponent implements OnInit {
     todos.then((res) => {
       console.log('Todos response', res.json());
     });
+    // Sample Promise creation and consumption
 
-    // Count of characters from a string with Index of each alphabet from (1 to 26, a-z)
-    // Count of repeating characters from astring with Index of each alphabet from (1 to 26, a-z)
+    // 6)Count of characters from a string with Index of each alphabet from (1 to 26, a-z)
+    // 6.1)Count of repeating characters from astring with Index of each alphabet from (1 to 26, a-z)
 
     let inputString = 'programming';
     let characterCount: any = {};
@@ -182,7 +184,7 @@ export class CodingExamplesComponent implements OnInit {
     // Count of characters from a string with Index of each alphabet from (1 to 26, a-z)
     // Count of repeating characters from astring with Index of each alphabet from (1 to 26, a-z)
 
-    // Count of numbers along with their Index from (0-9)
+    // 7) Count of numbers along with their Index from (0-9)
 
     let number = '9987632150';
     let numberCount: any = {};
@@ -199,7 +201,7 @@ export class CodingExamplesComponent implements OnInit {
 
     // Count of numbers along with their Index from (0-9)
 
-    // Check whether given number is a Prime or not
+    // 8) Check whether given number is a Prime or not
 
     function isPrime(num: number) {
       if (num <= 1) return false; // Numbers less than or equal to 1 are not prime
@@ -219,7 +221,7 @@ export class CodingExamplesComponent implements OnInit {
     }
     // Check whether given number is a Prime or not
 
-    // Print Prime numbers from range 1 to 100 and print highest prime number
+    // 8.1) Print Prime numbers from range 1 to 100 and print highest prime number
 
     function primesUpto100() {
       let highestPrimeNUmber = -1; //Initialize to -1, as no prime is negative
