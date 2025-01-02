@@ -126,5 +126,60 @@ export class CodingExamplesComponent implements OnInit {
       }
       console.log('Second longest word is:', secondLongest);
     }
+
+    const myPromise = new Promise((resolve, reject) => {
+      let a = 1;
+      if (a !== 1) {
+        resolve('Value of a is 1');
+      }
+      reject('Value of a is different');
+    });
+    myPromise
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    const endPoint = 'https://jsonplaceholder.typicode.com/todos/1';
+
+    const todos = fetch(endPoint);
+    console.log('Todos', todos);
+    todos.then((res) => {
+      console.log('Todos response', res.json());
+    });
+
+    // Count of characters from a string with Index of each alphabet from (1 to 26, a-z)
+    // Count of repeating characters from astring with Index of each alphabet from (1 to 26, a-z)
+
+    let inputString = 'programming';
+    let characterCount: any = {};
+    let charIndex: any = {};
+    for (let char of inputString) {
+      characterCount[char] = (characterCount[char] || 0) + 1;
+      let charCode = char.toLowerCase().charCodeAt(0) - 97 + 1;
+      if (charCode >= 1 && charCode <= 26) {
+        charIndex[char] = charCode;
+      }
+    }
+    console.log('All char count from string', characterCount);
+    console.log('Index of all chars from string', charIndex);
+    let repeatingCharacters: any = {};
+    let repeatingCharIndex: any = {};
+    for (let char in charCount) {
+      if (charCount[char] > 1) {
+        repeatingCharacters[char] = charCount[char];
+        let charCode = char.toLowerCase().charCodeAt(0) - 97 + 1;
+        if (charCode >= 1 && charCode <= 26) {
+          repeatingCharIndex[char] = charCode;
+        }
+      }
+    }
+    console.log('Repeating characters from string', repeatingCharacters);
+    console.log('Repeating char Index', repeatingCharIndex);
+
+    // Count of characters from a string with Index of each alphabet from (1 to 26, a-z)
+    // Count of repeating characters from astring with Index of each alphabet from (1 to 26, a-z)
   }
 }
