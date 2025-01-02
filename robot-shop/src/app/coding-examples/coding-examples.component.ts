@@ -198,5 +198,43 @@ export class CodingExamplesComponent implements OnInit {
     console.log('Index of numbers from given number string', numberIndex);
 
     // Count of numbers along with their Index from (0-9)
+
+    // Check whether given number is a Prime or not
+
+    function isPrime(num: number) {
+      if (num <= 1) return false; // Numbers less than or equal to 1 are not prime
+      for (let i = 2; i <= num - 1; i++) {
+        if (num % i === 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    const num = 97;
+    if (isPrime(num)) {
+      console.log(`${num} is Prime`);
+    } else {
+      console.log(`${num} is not prime`);
+    }
+    // Check whether given number is a Prime or not
+
+    // Print Prime numbers from range 1 to 100 and print highest prime number
+
+    function primesUpto100() {
+      let highestPrimeNUmber = -1; //Initialize to -1, as no prime is negative
+      for (let num = 1; num <= 100; num++) {
+        if (isPrime(num)) {
+          console.log('Prime number from 1 to 100 are', num);
+          highestPrimeNUmber = num;
+        }
+      }
+      console.log(
+        'Highest prime number from 1 to 100 is : ',
+        highestPrimeNUmber
+      );
+    }
+
+    primesUpto100();
   }
 }
